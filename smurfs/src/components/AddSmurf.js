@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addSmurf } from  '../actions/index';
+import S from 'styled-components';
+
+const FormDiv = S.div`
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+`; 
+
 
 const AddingSmurf = props => {
     const [newSmurf, setNewSmurf] = useState({
@@ -24,7 +33,7 @@ const AddingSmurf = props => {
     };
 
     return (
-        <div>
+        <FormDiv>
             <form>
                 <label>Name:
                     <input
@@ -54,9 +63,8 @@ const AddingSmurf = props => {
                     /> 
                     <button onClick={handleSubmit}>Release to Village</button>
                 </label>
-
             </form>
-        </div>
+        </FormDiv>
     )
 };
 
